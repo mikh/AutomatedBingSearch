@@ -1,0 +1,5 @@
+package control_structure;
+
+public class Defines {
+	public static final String BING_URL = "http://www.bing.com/";
+}

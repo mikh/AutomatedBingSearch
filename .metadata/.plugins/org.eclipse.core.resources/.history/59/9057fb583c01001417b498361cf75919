@@ -1,0 +1,6 @@
+package control_structure;
+
+public class Defines {
+	public static final String BING_URL = "http://www.bing.com/";
+	public static final String BING_LOGIN_URL = "http://www.bing.com/rewards/signin";
+}

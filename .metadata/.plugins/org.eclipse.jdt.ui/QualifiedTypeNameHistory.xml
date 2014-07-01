@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="web.Client"/>
+<fullyQualifiedTypeName name="control_structure.Defines"/>
+<fullyQualifiedTypeName name="file_operations.FileOps"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="tools.Basics"/>
+</qualifiedTypeNameHistroy>

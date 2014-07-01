@@ -43,5 +43,7 @@
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/Selenium/selenium-2.39.0/selenium-java-2.39.0-srcs.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/WebClient/cantrip.web.client.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/StrOps/cantrip.string_operations.strops.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/FileOps/cantrip.file_operations.fileops.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/Tools/cantrip.tools.basics.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
