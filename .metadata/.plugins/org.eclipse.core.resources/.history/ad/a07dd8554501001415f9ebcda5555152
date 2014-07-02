@@ -1,9 +1,0 @@
-package control_structure;
-
-import web.Client;
-
-public class Control {
-	public static void main(String[] args){
-		Client cc = new Client(Defines.BING_URL, "firefox", "");
-	}
-}

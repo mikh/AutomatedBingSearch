@@ -45,5 +45,6 @@
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/StrOps/cantrip.string_operations.strops.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/FileOps/cantrip.file_operations.fileops.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/Tools/cantrip.tools.basics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mikhail.andreev/Dropbox/Programming/Java/Libraries/Log/cantrip.logging.log.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
