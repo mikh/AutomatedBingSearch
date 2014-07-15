@@ -45,7 +45,7 @@ public class Control {
 			log.write(2, "Search complete. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
 
 			log.write(2, "All operations complete at " + dateFormat.format(new Date()) + ". Took " + (System.currentTimeMillis() - time_start) + "ms.\r\n");
-
+		
 		} catch (IOException e) {
 			log.write(1,"Couldn't load dictionary.");
 		}

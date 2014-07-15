@@ -1,7 +1,0 @@
-package control_structure;
-
-public class Defines {
-	public static final String BING_URL = "http://www.bing.com/";
-	public static final String BING_LOGIN_URL = "http://www.bing.com/rewards/signin";
-	public static final String LOGIN_LINK_CSS_IDENTIFIER = "windows_live_id";
-}
