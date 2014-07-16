@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	Automated Bing Search
+</project>
+<!-- example comment -->
+<defined_values>
+	<String>
+		<BING_URL>
+			http://www.bing.com/
+		</BING_URL>
+		<BING_LOGIN_URL>
+			https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1404236262&rver=6.0.5286.0&wp=MBI&wreply=http:%2F%2Fwww.bing.com%2FPassport.aspx%3Frequrl%3Dhttp%253a%252f%252fwww.bing.com%252frewards%252fsignin%253fru%253dhttp%25253a%25252f%25252fwww.bing.com%25252frewards%25252fdashboard%2526vt%253dSignin&lc=1033&id=264960
+		</BING_LOGIN_URL>
+		<USERNAME>
+			mikha.andreev@gmail.com
+		</USERNAME>
+		<PASS>
+			SIRen_song_27
+		</PASS>
+		<LOGIN_ID>
+			i0116
+		</LOGIN_ID>
+		<PASSWORD_ID>
+			i0118
+		</PASSWORD_ID>
+		<SIGNIN_BTN_ID>
+			idSIButton9
+		</SIGNIN_BTN_ID>
+		<DICTIONARY_FILE>
+			dictionary.txt
+		</DICTIONARY_FILE>
+		<SEARCH_BAR_ID>
+			sb_form_q
+		</SEARCH_BAR_ID>
+		<SEARCH_BTN_ID>
+			sb_form_go
+		</SEARCH_BTN_ID>
+		<LOG_FILE_LOCATION>
+			log.txt
+		</LOG_FILE_LOCATION>
+		<VERSION>
+			1.1
+		</VERSION>
+		<TEST>
+			test_string
+		</TEST>
+	</String>
+	<int>
+		<DELAY_GO>
+			5000
+		</DELAY_GO>
+		<DELAY_SEARCH>
+			30000
+		</DELAY_SEARCH>
+		<NUMBER_OF_SEARCHES>
+			90
+		</NUMBER_OF_SEARCHES>
+		<LOGGING_LEVEL>
+			5
+		</LOGGING_LEVEL>
+		<TEST>
+			test_int
+		</TEST>
+	</int>
+</defined_values>

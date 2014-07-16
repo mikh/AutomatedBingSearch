@@ -11,9 +11,21 @@ import logging.Log;
 import file_operations.FileOps;
 import tools.Basics;
 import web.Client;
+import define_loader.DefineLoader;
 
 public class Control {
 	public static void main(String[] args){
+		
+		
+		try {
+			System.out.println("Loading defined values from xml.");
+			DefineLoader dl = new DefineLoader("Automated Bing Search");
+			dl.loadDefines("defines.xml", Defines.class);
+		} catch (IllegalArgumentException | IllegalAccessException e1) {
+			System.out.println("[ERROR] Improper loading of defines!");
+		}
+
+
 		Log log = new Log(Defines.LOGGING_LEVEL, Defines.LOG_FILE_LOCATION);
 
 		try{
