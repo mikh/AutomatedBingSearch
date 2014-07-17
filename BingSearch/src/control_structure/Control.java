@@ -20,8 +20,10 @@ public class Control {
 		try {
 			System.out.println("Loading defined values from xml.");
 			DefineLoader dl = new DefineLoader("Automated Bing Search");
-			dl.loadDefines("defines.xml", Defines.class);
-		} catch (IllegalArgumentException | IllegalAccessException e1) {
+			if(!dl.loadDefines("defines.xml", Defines.class)){
+				System.out.println("[ERROR] Defines xml file not correct. Please specify the location of the correct file.");
+			}
+		} catch (IllegalArgumentException  e1) {
 			System.out.println("[ERROR] Improper loading of defines!");
 		}
 
