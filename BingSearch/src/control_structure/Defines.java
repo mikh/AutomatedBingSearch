@@ -17,4 +17,7 @@ public class Defines {
 	public static int LOGGING_LEVEL = 5;
 	public static String LOG_FILE_LOCATION = "log.txt";
 	public static String VERSION = "1.1";
+	public static String PRELOGIN_PAGE_TITLE = "Sign in to your Microsoft account";
+	public static String POSTLOGIN_PAGE_TITLE = "Bing Rewards - Login";
+	public static int MAX_LOGIN_ATTEMPTS = 10;
 }

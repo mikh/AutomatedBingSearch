@@ -44,6 +44,12 @@
 		<TEST>
 			test_string
 		</TEST>
+		<PRELOGIN_PAGE_TITLE>
+			Sign in to your Microsoft account
+		</PRELOGIN_PAGE_TITLE>
+		<POSTLOGIN_PAGE_TITLE>
+			Bing Rewards - Login
+		</POSTLOGIN_PAGE_TITLE>
 	</String>
 	<int>
 		<DELAY_GO>
@@ -61,5 +67,8 @@
 		<TEST>
 			test_int
 		</TEST>
+		<MAX_LOGIN_ATTEMPTS>
+			10
+		</MAX_LOGIN_ATTEMPTS>
 	</int>
 </defined_values>

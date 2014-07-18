@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.remote.UnreachableBrowserException;
+
 import logging.Log;
 import file_operations.FileOps;
 import tools.Basics;
@@ -40,18 +43,25 @@ public class Control {
 			time_elapsed = System.currentTimeMillis();
 			
 			log.write(2, "Starting Web Client.\r\n");
-			Client cc = new Client(Defines.BING_LOGIN_URL);
+			Client cc = new Client(Defines.BING_LOGIN_URL, null);
+			System.out.println(cc.getPageTitle());
+			if(cc.checkForAlert(60))	//wait 60s
+				cc.acceptAlert();
 			log.write(2, "Web Client Ready. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
 			
 			time_elapsed = System.currentTimeMillis();
 			log.write(2, "Loading dictionary.\r\n");
 			ArrayList<String> dictionary = FileOps.loadFileIntoArrayList(Defines.DICTIONARY_FILE);
-			log.write(2, "Web Client Ready. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
+			log.write(2, "Dictionary ready. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
 
 			time_elapsed = System.currentTimeMillis();
 			log.write(2, "Performing login.\r\n");
-			login(cc);
-			log.write(2, "Web Client Ready. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
+			if(!login(cc)){
+				log.write(1, "Login Failed");
+				throw new LoginException();
+			}
+			System.out.println(cc.getPageTitle());
+			log.write(2, "Logged in. Took " + (System.currentTimeMillis() - time_elapsed) + "ms.\r\n");
 			
 			time_elapsed = System.currentTimeMillis();
 			log.write(2, "Starting searches.\r\n");
@@ -61,7 +71,11 @@ public class Control {
 			log.write(2, "All operations complete at " + dateFormat.format(new Date()) + ". Took " + (System.currentTimeMillis() - time_start) + "ms.\r\n");
 		
 		} catch (IOException e) {
-			log.write(1,"Couldn't load dictionary.");
+			log.write(1,"Couldn't load dictionary.\r\n");
+		} catch (UnreachableBrowserException e){
+			log.write(1, "Browser has closed prematurely.\r\n");
+		} catch (LoginException e){
+			log.write(1, "Unable to login. Aborting. \r\n");
 		}
 		
 		log.write(2, "Operation Complete. Closing log.\r\n");
@@ -69,11 +83,27 @@ public class Control {
 		
 	}
 	
-	public static void login(Client cc){
-		cc.sendKeys(Defines.LOGIN_ID, Defines.USERNAME, false);
-		cc.sendKeys(Defines.PASSWORD_ID, Defines.PASS, false);
-		cc.click(Defines.SIGNIN_BTN_ID, false);
-		cc.acceptAlert();
+	public static boolean login(Client cc){
+		String title = Defines.PRELOGIN_PAGE_TITLE;
+		int attempts = 0;
+		
+		while(title.equals(Defines.PRELOGIN_PAGE_TITLE) && attempts++ < Defines.MAX_LOGIN_ATTEMPTS){
+			cc.sendKeys(Defines.LOGIN_ID, Defines.USERNAME, false);
+			cc.sendKeys(Defines.PASSWORD_ID, Defines.PASS, false);
+			cc.click(Defines.SIGNIN_BTN_ID, false);
+			try{
+				if(cc.checkForAlert(30))
+					cc.acceptAlert();
+			} catch(NoAlertPresentException e){
+				//if no alert it's hardly the end of the world...
+			}
+			title = cc.getPageTitle();
+		}
+		
+		if(attempts == Defines.MAX_LOGIN_ATTEMPTS){
+			return false;
+		}
+		return true;
 	}
 	
 	public static void runSearches(int number_of_searches, Client cc, ArrayList<String> dictionary, Log log){
