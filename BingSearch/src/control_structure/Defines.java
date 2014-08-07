@@ -22,4 +22,5 @@ public class Defines {
 	public static String PRELOGIN_PAGE_TITLE = "Sign in to your Microsoft account";
 	public static String POSTLOGIN_PAGE_TITLE = "Bing Rewards - Login";
 	public static int MAX_LOGIN_ATTEMPTS = 10;
+	public static String FIREFOX_PATH = "C:\\Firefox Installs\\firefox.exe";
 }

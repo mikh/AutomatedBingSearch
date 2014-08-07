@@ -50,6 +50,9 @@
 		<POSTLOGIN_PAGE_TITLE>
 			Bing Rewards - Login
 		</POSTLOGIN_PAGE_TITLE>
+		<FIREFOX_PATH>
+			C:\\Firefox Installs\\firefox.exe
+		</FIREFOX_PATH>
 	</String>
 	<int>
 		<DELAY_GO>

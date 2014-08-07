@@ -43,7 +43,7 @@ public class Control {
 			time_elapsed = System.currentTimeMillis();
 			
 			log.write(2, "Starting Web Client.\r\n");
-			Client cc = new Client(Defines.BING_LOGIN_URL, null);
+			Client cc = new Client(Defines.BING_LOGIN_URL, null, Defines.FIREFOX_PATH);
 			System.out.println(cc.getPageTitle());
 			if(cc.checkForAlert(60))	//wait 60s
 				cc.acceptAlert();
